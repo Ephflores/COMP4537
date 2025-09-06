@@ -26,6 +26,7 @@ class ButtonGenerator {
   createButton(index) {
     const btn = document.createElement("button");
     btn.textContent = `${index}`;
+    btn.classList.add("generated-btn");
     btn.style.backgroundColor = this.getRandomColor();
     return btn;
   }
