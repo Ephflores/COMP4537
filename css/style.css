@@ -6,6 +6,10 @@
   margin-top: 1em;
 }
 
+#btnCount {
+    width: 10em;
+}
+
 .generated-btn {
   width: 10em;
   height: 5em;

@@ -1,3 +1,5 @@
+// This code was developed with assistance from OpenAI's ChatGPT.
+
 class ButtonItem {
   constructor(index, color, onClick) {
     this.index = index;
@@ -87,10 +89,14 @@ class ButtonContainer {
 }
 
 class Game {
-  constructor(inputId, goBtnId, containerId) {
+  constructor(inputId, goBtnId, containerId, labelId) {
     this.input = document.getElementById(inputId);
     this.goBtn = document.getElementById(goBtnId);
+    this.label = document.getElementById(labelId);
     this.container = new ButtonContainer(containerId);
+
+    this.label.textContent = MESSAGES.labels.btnCount;
+    this.goBtn.textContent = MESSAGES.labels.goBtn;
 
     this.originalOrder = [];
     this.userProgress = 0;
@@ -102,7 +108,7 @@ class Game {
     const n = parseInt(this.input.value, 10);
 
     if (isNaN(n) || n < 3 || n > 7) {
-      alert("Please enter a number between 3 and 7.");
+      alert(MESSAGES.alerts.invalidInput);
       return;
     }
 
@@ -147,10 +153,10 @@ class Game {
       btn.revealLabel();
       this.userProgress++;
       if (this.userProgress === this.originalOrder.length) {
-        alert("Excellent memory!");
+        alert(MESSAGES.alerts.win);
       }
     } else {
-      alert("Wrong order!");
+      alert(MESSAGES.alerts.lose);
       this.endGame();
     }
   }
@@ -171,5 +177,5 @@ class Game {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  new Game("btnCount", "goBtn", "btnContainer");
+  new Game("btnCount", "goBtn", "btnContainer", "btnCountLabel");
 });
