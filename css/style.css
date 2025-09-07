@@ -9,7 +9,7 @@
 .generated-btn {
   width: 10em;
   height: 5em;
-  color: white;
+  color: black;
   border: solid black;
   cursor: pointer;
   transition: transform 0.2s ease;
@@ -17,4 +17,12 @@
 
 .generated-btn:hover {
   transform: scale(1.05);
+}
+
+.disabled-btn {
+  cursor: default !important;
+}
+
+.disabled-btn:hover {
+  transform: none !important;
 }
