@@ -3,6 +3,9 @@ const MESSAGES = {
   studentName: "Ephraim Flores",
   buttons: {
     writer: "Go to Writer Page",
-    reader: "Go to Reader Page"
+    reader: "Go to Reader Page",
+    add: "add",
+    remove: "remove",
+    back: "back"
   }
 };
