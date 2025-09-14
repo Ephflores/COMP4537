@@ -66,7 +66,7 @@ class NoteApp {
     const notesData = this.notes.map((note) => ({ text: note.getValue() }));
     localStorage.setItem("notes", JSON.stringify(notesData));
     const now = new Date().toLocaleTimeString();
-    this.saveTime.textContent = `stored at: ${now}`;
+    this.saveTime.textContent = `${MESSAGES.labels.storeTimeLabel}: ${now}`;
   }
 
   addNote(text = "") {
@@ -82,5 +82,6 @@ class NoteApp {
 }
 
 window.addEventListener("DOMContentLoaded", () => {
+  document.getElementById("writerPage").textContent = MESSAGES.labels.writerPage;
   new NoteApp("notesContainer", "saveTime", "addBtn", "backBtn");
 });

@@ -7,5 +7,11 @@ const MESSAGES = {
     add: "add",
     remove: "remove",
     back: "back"
+  },
+  labels: {
+    writerPage: "Writer Page",
+    readerPage: "Reader Page",
+    storeTimeLabel: "stored at",
+    updateTimeLabel: "updated at"
   }
 };
